@@ -1,10 +1,5 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - hci-ah-home-api-app
 
-env:
-  AZURE_WEBAPP_NAME: hci-ah-home-api-app    
-  AZURE_WEBAPP_PACKAGE_PATH: ${{env.DOTNET_ROOT}}/hci-ah-home-api   
-  DOTNET_VERSION: '7.x'            
-
 on:
    push:
     branches:
@@ -16,6 +11,11 @@ on:
       - '*'
     paths:
       - 'hci-ah-home-api/**'
+
+env:
+  AZURE_WEBAPP_NAME: hci-ah-home-api-app    
+  AZURE_WEBAPP_PACKAGE_PATH: ${{env.DOTNET_ROOT}}/hci-ah-home-api   
+  DOTNET_VERSION: '7.x'            
 
 jobs:
   build:
