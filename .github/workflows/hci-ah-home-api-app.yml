@@ -14,7 +14,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: hci-ah-home-api-app    
-  AZURE_WEBAPP_PACKAGE_PATH: ${{env.DOTNET_ROOT}}/hci-ah-home-api   
+  AZURE_WEBAPP_PACKAGE_PATH: './hci-ah-home-api'   
   DOTNET_VERSION: '7.x'            
 
 jobs:
