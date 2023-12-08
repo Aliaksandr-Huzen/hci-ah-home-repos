@@ -1,7 +1,9 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy ASP.Net Core app to Azure Web App - hci-ah-home-api-app
+
+env:
+  AZURE_WEBAPP_NAME: hci-ah-home-api-app    
+  AZURE_WEBAPP_PACKAGE_PATH: ${{env.DOTNET_ROOT}}/hci-ah-home-api   
+  DOTNET_VERSION: '7.x'            
 
 on:
    push:
@@ -25,20 +27,19 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '7.x'
-          include-prerelease: true
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/src --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/hci-ah-home-api/src
+        run: dotnet publish -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/out
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/hci-ah-home-api/src
+          path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/out
 
   deploy:
     runs-on: ubuntu-latest
@@ -57,7 +58,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'hci-ah-home-api-app'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }} 
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6AEE730A90F34585931A5F648E1F862E }}
