@@ -29,11 +29,11 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Build with dotnet
-        run: dotnet build ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/src --configuration Release
-
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/out
+      - name: dotnet build and publish
+        run: |
+          dotnet restore ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/src
+          dotnet build ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/src --configuration Release
+          dotnet publish ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/src -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/out
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
