@@ -1,0 +1,13 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-12-09 15:55+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+
+#. js-lingui-explicit-id
+#: src/translations.ts:5
+msgid "errorView.text"
+msgstr "Ops! Something went wrong. But we will help you find your way."

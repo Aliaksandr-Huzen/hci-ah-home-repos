@@ -1,0 +1,7 @@
+src/locales/_build/
+src/locales/**/*.js
+src/stories
+src/**/*/*.stories.*
+*module.scss.d.ts
+build
+env-config.js

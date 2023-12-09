@@ -1,0 +1,70 @@
+$ring-diameter-extrasmall: 12px;
+$ring-diameter-small: 16px;
+$ring-diameter-medium: 32px;
+$ring-diameter-large: 48px;
+$border-width: 2px;
+
+.backRing {
+    position: absolute;
+    border: $border-width solid currentColor;
+    border-radius: 50%;
+    border-color: currentColor;
+    opacity: 0.25;
+}
+
+.ring {
+    position: absolute;
+}
+
+.ringPartial {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    border: $border-width solid currentColor;
+    border-radius: 50%;
+    animation: ringAnimation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: currentColor transparent transparent transparent;
+
+    &:nth-of-type(1) {
+        animation-delay: -0.35s;
+    }
+
+    &:nth-of-type(2) {
+        animation-delay: -0.3s;
+    }
+
+    &:nth-of-type(3) {
+        animation-delay: -0.15s;
+    }
+}
+
+@keyframes ringAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.isSize {
+    &ExtraSmall {
+        height: $ring-diameter-extrasmall;
+        width: $ring-diameter-extrasmall;
+    }
+
+    &Small {
+        height: $ring-diameter-small;
+        width: $ring-diameter-small;
+    }
+
+    &Medium {
+        height: $ring-diameter-medium;
+        width: $ring-diameter-medium;
+    }
+
+    &Large {
+        height: $ring-diameter-large;
+        width: $ring-diameter-large;
+    }
+}

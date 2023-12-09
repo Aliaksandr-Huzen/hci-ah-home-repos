@@ -1,0 +1,89 @@
+@import './font-faces';
+@import './variables/fonts';
+
+* {
+    margin: 0;
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+    box-sizing: inherit;
+    word-break: break-word;
+}
+
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Give element block that are not block by default.
+ * This makes sure the parent div is the exact size of the element.
+ */
+label,
+img,
+audio,
+video,
+canvas,
+meter,
+progress,
+svg,
+iframe {
+    display: block;
+}
+
+button {
+    font-size: inherit;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ol,
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    padding: 0;
+    background-color: var(--root-color);
+}
+
+#root > div {
+    height: 100%;
+}
+
+body {
+    font-family: $font-default;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --app-height: 100%;
+    --root-color: #000000;
+}

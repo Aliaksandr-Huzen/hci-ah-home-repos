@@ -1,0 +1,80 @@
+{
+    "name": "hci-ah-home-app",
+    "version": "1.0.1",
+    "description": "HCI Home app",
+    "author": "A. Huzen",
+    "dependencies": {
+        "@lingui/react": "^4.5.0",
+        "axios": "^1.5.1",
+        "classnames": "^2.3.2",
+        "core-js": "^3.33.1",
+        "js-cookie": "^3.0.5",
+        "node-sass": "^9.0.0",
+        "query-string": "^8.1.0",
+        "react": "^18.2.0",
+        "react-app-polyfill": "^3.0.0",
+        "react-dom": "^18.2.0",
+        "react-ga4": "^2.1.0",
+        "react-helmet": "^6.1.0",
+        "react-pose": "^4.0.10",
+        "react-router-dom": "^6.17.0",
+        "react-router-hash-link": "^2.4.3",
+        "react-scripts": "^5.0.1",
+        "react-snap": "^1.23.0",
+        "typescript": "^5.2.2",
+        "webfontloader": "^1.6.28"
+    },
+    "scripts": {
+        "start": "chmod +x ./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start",
+        "start-scss-typing": "npx typed-scss-modules src --watch --nameFormat none --ignore \"**/*.extensions.scss\"",
+        "build": "react-scripts build",
+        "postbuild": "react-snap",
+        "test": "TZ=Europe/Amsterdam react-scripts test",
+        "test:coverage": "npm test -- --coverage",
+        "lint": "eslint ./",
+        "lint:fix": "npm run lint -- --fix",
+        "lingui:extract": "lingui extract",
+        "lingui:compile": "lingui compile",
+        "lingui:all": "npm run lingui:extract && npm run lingui:compile",
+        "convert:img": "./convert.sh"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ]
+    },
+    "devDependencies": {
+        "@lingui/cli": "^4.5.0",
+        "@lingui/core": "^4.5.0",
+        "@lingui/macro": "^4.5.0",
+        "@types/js-cookie": "^3.0.5",
+        "@types/lingui__macro": "^2.7.4",
+        "@types/react": "^18.2.31",
+        "@types/react-dom": "^18.2.14",
+        "@types/react-helmet": "^6.1.8",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/react-router-hash-link": "^2.4.8",
+        "@types/webfontloader": "^1.6.36",
+        "@typescript-eslint/eslint-plugin": "^6.8.0",
+        "@typescript-eslint/parser": "^6.8.0",
+        "babel-plugin-macros": "^3.1.0",
+        "eslint": "^8.52.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-import": "^2.28.1",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-lodash": "^7.4.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "make-plural": "^7.3.0",
+        "prettier": "^3.0.3",
+        "typed-scss-modules": "^7.1.4"
+    }
+}

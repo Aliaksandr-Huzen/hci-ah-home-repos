@@ -1,0 +1,26 @@
+@import 'src/styles/variables/layout';
+@import 'src/styles/variables/colors';
+
+.content {
+    position: relative;
+    display: flex;
+
+    width: $width;
+
+    @include media-query(mobile) {
+        width: $mobile-width;
+    }
+
+    margin: auto;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.status {
+    transform: rotate(45deg);
+    transform-origin: left;
+    padding-bottom: spacing(12);
+    padding-right: spacing(4);
+}
