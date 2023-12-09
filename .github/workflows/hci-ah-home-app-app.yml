@@ -32,5 +32,4 @@ jobs:
           api_location: ""
           output_location: "build"
         env:
-          NPM_CONFIG_FORCE: true
           NPM_CONFIG_LEGACY_PEER_DEPS: true
