@@ -1,0 +1,45 @@
+$font-location: '../assets/fonts';
+$font-display: 'swap';
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url($font-location + '/Inter/Inter-SemiBold.eot');
+    src:
+        url($font-location + '/Inter/Inter-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url($font-location + '/Inter/Inter-SemiBold.woff2') format('woff2'),
+        url($font-location + '/Inter/Inter-SemiBold.woff') format('woff'),
+        url($font-location + '/Inter/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: $font-display;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url($font-location + '/Inter/Inter-Bold.eot');
+    src:
+        url($font-location + '/Inter/Inter-Bold.eot?#iefix') format('embedded-opentype'),
+        url($font-location + '/Inter/Inter-Bold.woff2') format('woff2'),
+        url($font-location + '/Inter/Inter-Bold.woff') format('woff'),
+        url($font-location + '/Inter/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: $font-display;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url($font-location + '/Inter/Inter-ExtraBold.eot');
+    src:
+        url($font-location + '/Inter/Inter-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url($font-location + '/Inter/Inter-ExtraBold.woff2') format('woff2'),
+        url($font-location + '/Inter/Inter-ExtraBold.woff') format('woff'),
+        url($font-location + '/Inter/Inter-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: $font-display;
+}

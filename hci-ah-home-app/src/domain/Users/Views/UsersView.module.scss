@@ -1,0 +1,14 @@
+@import 'src/styles/variables/layout';
+@import 'src/styles/variables/colors';
+
+.loading {
+    margin: auto;
+
+    &.isLoaded {
+        animation: fadeOut 1s;
+    }
+
+    &.isHidden {
+        display: none;
+    }
+}

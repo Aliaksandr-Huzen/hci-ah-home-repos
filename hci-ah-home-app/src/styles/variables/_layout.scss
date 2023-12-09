@@ -1,0 +1,93 @@
+$space-base: 8px;
+
+$grid-size: 12;
+$grid-space: 24px;
+$grid-column: calc((#{var(--app-width)} - (#{$grid-space} * (#{$grid-size} - 1))) / #{$grid-size});
+
+$mobile-grid-size: 12;
+$mobile-grid-space: 12px;
+$mobile-grid-column: calc((#{var(--app-width)} - (#{$mobile-grid-space} * (#{$mobile-grid-size} - 1))) / #{$mobile-grid-size});
+
+$width: calc(#{$grid-column} * (#{$grid-size} - 4) + #{$grid-space} * (#{$grid-size} - 3));
+$mobile-width: calc(#{$mobile-grid-column} * (#{$mobile-grid-size} - 2) + #{$mobile-grid-space} * (#{$mobile-grid-size} - 3));
+
+@function spacing($multiplier: 1, $correction: 0px) {
+    @return $space-base * $multiplier + $correction;
+}
+
+@function px-to-em($pixelsize) {
+    @return $pixelsize/16 * 1em;
+}
+
+@function px-to-relative-em($pixelsize, $reletivesize) {
+    @return $reletivesize / $pixelsize * 1em
+}
+
+$screen-smallest: 768px;
+$screen-desktop: 1366px;
+$screen-tablet: 1024px;
+$screen-ultra-wide: 2048px;
+
+@mixin media-query($breakpoint) {
+    $ultra-wide-breakpoint: '(min-width: #{$screen-ultra-wide})';
+    $desktop-breakpoint: '(min-width: #{$screen-desktop})';
+    $tablet-extended-breakpoint: '(max-width: #{$screen-desktop})';
+    $tablet-extended-only-breakpoint: '(min-width: #{$screen-tablet + 1px}) and (max-width: #{$screen-desktop})';
+    $tablet-breakpoint: '(max-width: #{$screen-tablet})';
+    $tablet-only-breakpoint: '(min-width: #{$screen-smallest}) and (max-width: #{$screen-tablet})';
+    $mobile-breakpoint: '(max-width: #{$screen-smallest - 1px})';
+
+    @if ($breakpoint == ultra-wide) {
+        @media #{$ultra-wide-breakpoint} {
+            @content;
+        }
+    } @else if ($breakpoint == desktop) {
+        @media #{$desktop-breakpoint} {
+            @content;
+        }
+    } @else if ($breakpoint == tablet-extended-only) {
+        @media #{$tablet-extended-only-breakpoint} {
+            @content;
+        }
+    } @else if ($breakpoint == tablet-extended) {
+        @media #{$tablet-extended-breakpoint} {
+            @content;
+        }
+    } @else if ($breakpoint == tablet-only) {
+        @media #{$tablet-only-breakpoint} {
+            @content;
+        }
+    } @else if ($breakpoint == tablet) {
+        @media #{$tablet-breakpoint} {
+            @content;
+        }
+    } @else if ($breakpoint == mobile) {
+        @media #{$mobile-breakpoint} {
+            @content;
+        }
+    } @else {
+        @media (max-width: #{$breakpoint}) {
+            @content;
+        }
+    }
+}
+
+@mixin visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+@mixin hover-or-query($breakpoint) {
+    &:hover {
+        @content;
+    }
+
+    @include media-query($breakpoint) {
+        @content;
+    }
+}

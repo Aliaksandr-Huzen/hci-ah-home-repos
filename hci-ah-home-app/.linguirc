@@ -1,0 +1,22 @@
+{
+  "compileNamespace": "es",
+  "catalogs": [
+    {
+      "path": "./src/locales/{locale}/messages",
+      "include": [
+        "./src/"
+      ],
+      "exclude": [
+        "**/node_modules/**",
+        "**/*.scss.d.ts"
+      ]
+    }
+  ],
+  "locales": ["en"],
+  "format": "po",
+  "rootDir": ".",
+  "sourceLocale": "en",
+  "fallbackLocales": {
+    "default": "en"
+  }
+}
