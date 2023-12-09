@@ -3,6 +3,9 @@
     "version": "1.0.1",
     "description": "HCI Home app",
     "author": "A. Huzen",
+    "engines": {
+        "node": ">=20.0.0"
+    },
     "dependencies": {
         "@lingui/react": "^4.5.0",
         "axios": "^1.5.1",
