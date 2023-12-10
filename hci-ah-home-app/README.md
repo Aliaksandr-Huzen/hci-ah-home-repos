@@ -30,3 +30,9 @@ This .NET 7/C# Web API application has been specially developed as a part of the
 ## Protocol
 1. We use the Restfull style.
 2. We use Resource-based approach, e.g. CRUD /users.
+
+
+# Tests
+1. Unit Tests. One example is added.
+2. Integrations test
+3. End to End test

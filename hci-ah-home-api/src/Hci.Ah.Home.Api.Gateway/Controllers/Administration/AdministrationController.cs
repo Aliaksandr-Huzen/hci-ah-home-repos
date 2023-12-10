@@ -16,7 +16,7 @@ public class AdministrationController : ControllerBase
     {
         _administrationConfig = options.Value;
     }
-    
+
     [HttpGet("version")]
     [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AdministrationVersion))]
