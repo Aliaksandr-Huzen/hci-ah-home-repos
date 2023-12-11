@@ -1,3 +1,6 @@
 export const routes = {
-    index: '/',
+    patients: {
+        search: '/patients',
+        details: (id: string = ':id') => `/patients/${id}`,
+    },
 }

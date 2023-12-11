@@ -1,0 +1,47 @@
+@import 'src/styles/variables/layout';
+@import 'src/styles/variables/colors';
+
+.container {
+    background-color: $primary-background-color;
+    margin: 25px auto 25px auto;
+    width: 50%;
+    position: relative;
+    display: flex;
+}
+
+.errorText {
+    font-size: 20px;
+    padding: 20px;
+}
+
+.content {
+    width: 100%;
+    color: $primary-text-color;
+}
+
+.loader {
+    color: $secondary-background-color;
+    margin: auto;
+}
+
+.history {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.visits {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    >span {
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+}
+
+.noVisit {
+    font-size: 14px;
+    font-style: italic;
+}
