@@ -7,12 +7,6 @@ export const translations = {
             message: 'Ops! Something went wrong. But we will help you find your way.',
         }),
     },
-    search: {
-        placeholder: defineMessage({
-            id: 'search.placeholder',
-            message: 'Type a patient`s name or email, e.g. a or ali or vin',
-        }),
-    },
     patientsSearchView: {
         errorText: defineMessage({
             id: 'patientsSearchView.errorText',

@@ -1,6 +1,5 @@
-import { FunctionComponent, useContext, useEffect, useState } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 import styles from './Search.module.scss'
-import { LocaleContext } from '../../../Core/Providers/LocaleProvider'
 
 export interface SearchParams {
     onSearch: (search: string) => void
@@ -8,8 +7,6 @@ export interface SearchParams {
 
 export const Search: FunctionComponent<SearchParams> = ({ onSearch }) => {
     const [search, setSearch] = useState('')
-
-    const locale = useContext(LocaleContext)
 
     useEffect(() => {
         onSearch(search)
@@ -20,7 +17,7 @@ export const Search: FunctionComponent<SearchParams> = ({ onSearch }) => {
             <input
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                placeholder={locale._('search.placeholder')}
+                placeholder={'Type a patient`s name or email, e.g. a or ali or vin'}
                 className={styles.search}
                 // eslint-disable-next-line
                 autoFocus={true}
