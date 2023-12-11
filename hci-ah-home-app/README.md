@@ -1,4 +1,4 @@
-# Introduction 
+# **HCI Home App**
 This React application has been specially developed as a part of the HCI home assessment. 
 
 
