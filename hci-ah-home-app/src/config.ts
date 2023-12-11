@@ -13,6 +13,11 @@ export interface Config {
     basePath: string
 
     defaultLocale: string
+
+    patients: {
+        doSearch: string
+        getExpandable: (id: string) => string
+    }
 }
 
 export const config: Config = {
@@ -21,4 +26,9 @@ export const config: Config = {
     basePath: getEnv('BASE_PATH'),
 
     defaultLocale: 'en',
+
+    patients: {
+        doSearch: 'api/patients',
+        getExpandable: (id: string) => `api/patients/${id}/expandable`,
+    },
 }

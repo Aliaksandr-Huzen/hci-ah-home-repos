@@ -1,0 +1,62 @@
+@import 'src/styles/variables/layout';
+@import 'src/styles/variables/colors';
+
+.container {
+    background-color: $primary-background-color;
+    margin: 25px auto 25px auto;
+    width: 50%;
+    position: relative;
+    display: flex;
+}
+
+.errorContainer {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+.errorText {
+    font-size: 20px;
+    padding: 20px;
+    font-style: italic;
+}
+
+.title {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    color: $primary-text-color;
+}
+
+.loader {
+    color: $secondary-background-color;
+    margin: auto;
+}
+
+.emptyMessage {
+    font-style: italic;
+    color: $primary-text-color;
+    font-size: 20px;
+}
+
+.patientInfo {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    >span {
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 1px 6px 0 $secondary-background-color;
+        border: 2px solid $secondary-background-color;
+    }
+}
